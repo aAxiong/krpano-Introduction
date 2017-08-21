@@ -69,7 +69,7 @@
 	               title="true"
 	               thumbs="true"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
-	               thumbs_opened="false"
+	               thumbs_opened="true"
 	               thumbs_text="true"
 	               thumbs_dragging="true"
 	               thumbs_onhoverscrolling="false"
@@ -106,7 +106,6 @@
 	               design_text_css="color:#FFFFFF; font-family:Arial;"
 	               design_text_shadow="1"
 	               />
-
 	<!-- 相册功能 -->
 <action name="flyout_hotspot">
 		for(set(i,0), i LT hotspot.count, inc(i),
@@ -115,7 +114,6 @@
 				callwith(hs, flyout_hotspot() );
 			  );
 		  );
-
 		if(flying_state == 'flyingout',
 			set(flying_state, 'flyingin');
 		  ,
@@ -123,7 +121,6 @@
 				set(flying_state, 'flyingout');
 		  	  );
 		  );
-
 		if(flying_state == 'in',
 			calc(backup_state, '0.0|' + rx + '|' + ry + '|' + rz + '|' + scale);
 			copy(backup_zorder, zorder);
@@ -249,10 +246,10 @@
 			<cube url="panos/puydesancy.tiles/mobile/pano_%s.jpg" devices="mobile" />
 		</image>
 
-		<hotspot name="scene_puydesancyh"   style="arrowspot1" ath="1" onloaded="do_crop_animation(64,64, 60);" atv="10"  scale="0.40" onclick="transition(scene_puydesancyh,     1.0,  0.0, 0, spot_eingang,     -86, 3, 45);" />
+		<hotspot name="scene_puydesancyh"  style="arrowspot1" ath="1" onloaded="do_crop_animation(64,64, 60);" atv="10"  scale="0.40" onclick="transition(scene_puydesancyh, 1.0,  0.0, 0, spot_eingang, -86, 3, 45);" />
 
-<!-- 		<hotspot name="hs1" style="hs_gallery" ath="0" atv="0" galleryname="gallery1" /> -->
-		<hotspot name="hs2" style="hs_gallery" ath="50" atv="20" galleryname="gallery2" />
+<!-- 		<hotspot name="hs1" style="hs_gallery" ath="0" atv="0" galleryname="gallery1" /> -->  <!-- 添加热点 蓝色箭头 galleryname 跳到所在的场景去-->
+		<!-- <hotspot name="hs2" style="hs_gallery" ath="50" atv="20" galleryname="gallery2" /> -->
 
 	</scene>
 	<scene name="spot_eingang" title="aa" onstart="" thumburl="panos/aa.tiles/thumb.jpg" lat="" lng="" heading="">
